@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scholarship Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        fieldset {
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        legend {
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Scholarship Application Form</h2>
+
+    <form>
+
+        <!-- Personal Details -->
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <label>Full Name:
+                <input type="text" name="fullname" required>
+            </label>
+
+            <label>Email:
+                <input type="email" name="email" required>
+            </label>
+
+            <label>Phone Number:
+                <input type="tel" name="phone">
+            </label>
+
+            <label>Date of Birth:
+                <input type="date" name="dob">
+            </label>
+
+        </fieldset>
+
+        <!-- Gender (Radio Buttons) -->
+        <fieldset>
+            <legend>Gender</legend>
+
+            <label>
+                <input type="radio" name="gender" value="male"> Male
+            </label>
+
+            <label>
+                <input type="radio" name="gender" value="female"> Female
+            </label>
+
+            <label>
+                <input type="radio" name="gender" value="other"> Other
+            </label>
+
+        </fieldset>
+
+        <!-- Course Selection (Dropdown) -->
+        <fieldset>
+            <legend>Course Details</legend>
+
+            <label>Select Course:
+                <select name="course">
+                    <option value="">--Select--</option>
+                    <option value="bsc">B.Sc</option>
+                    <option value="bcom">B.Com</option>
+                    <option value="ba">B.A</option>
+                    <option value="btech">B.Tech</option>
+                </select>
+            </label>
+
+        </fieldset>
+
+        <!-- Skills (Checkboxes) -->
+        <fieldset>
+            <legend>Skills</legend>
+
+            <label>
+                <input type="checkbox" name="skills" value="communication"> Communication
+            </label>
+
+            <label>
+                <input type="checkbox" name="skills" value="leadership"> Leadership
+            </label>
+
+            <label>
+                <input type="checkbox" name="skills" value="technical"> Technical
+            </label>
+
+            <label>
+                <input type="checkbox" name="skills" value="sports"> Sports
+            </label>
+
+        </fieldset>
+
+        <!-- Declaration -->
+        <fieldset>
+            <legend>Declaration</legend>
+
+            <label>
+                <input type="checkbox" required>
+                I hereby declare that the above information is true.
+            </label>
+
+        </fieldset>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+</body>
+</html>
