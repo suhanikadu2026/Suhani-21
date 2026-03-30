@@ -1,0 +1,86 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body with gradient background */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #741381, #e2c3dc);
+
+}
+
+h1 {
+    font-size: 45px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #43114d;
+    text-align: center;
+}
+
+/* Gallery Layout */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Image Box */
+.image-box {
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Image Styling */
+.image-box img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* Hover Effects */
+.image-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Zoom + brightness effect */
+.image-box:hover img {
+    transform: scale(1.2);
+    filter: brightness(80%);
+}
+
+/* Overlay effect using gradient */
+.image-box::after {
+    content: "View Image";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Show overlay on hover */
+.image-box:hover::after {
+    opacity: 1;
+}
