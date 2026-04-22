@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Monitoring Dashboard</title>
+</head>
+
+<body bgcolor="#E6F2FF">
+
+    <!-- ===== HEADER ===== -->
+    <header align="center">
+        <h1>🖥️ SYSTEM MONITORING DASHBOARD</h1>
+        <h3>Admin Control Panel</h3>
+        <hr size="3" color="black">
+    </header>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav align="center">
+        <a href="#home">HOME</a> |
+        <a href="#cpu">CPU</a> |
+        <a href="#ram">RAM</a> |
+        <a href="#logs">LOGS</a> |
+        <a href="#about">ABOUT</a>
+        <hr>
+    </nav>
+
+    <!-- ===== MAIN TABLE LAYOUT ===== -->
+    <table width="100%" border="1" cellpadding="10">
+
+        <tr>
+            <!-- LEFT SIDE -->
+            <td width="70%" valign="top">
+
+                <!-- HOME -->
+                <section id="home">
+                    <h2>📊 Dashboard Overview</h2>
+                    <p>This dashboard monitors system performance including CPU, RAM, and logs.</p>
+                </section>
+
+                <hr>
+
+                <!-- CPU -->
+                <section id="cpu">
+                    <h2>⚙️ CPU Usage</h2>
+                    <p>Current Usage:</p>
+                    <progress value="65" max="100"></progress>
+                    <p><b>65%</b> - Normal Load</p>
+                </section>
+
+                <hr>
+
+                <!-- RAM -->
+                <section id="ram">
+                    <h2>💾 RAM Usage</h2>
+                    <p>Memory Consumption:</p>
+                    <progress value="70" max="100"></progress>
+                    <p><b>70%</b> - Moderate Usage</p>
+                </section>
+
+                <hr>
+
+                <!-- LOGS -->
+                <section id="logs">
+                    <h2>📜 System Logs</h2>
+                    <textarea rows="10" cols="80" readonly>
+[10:00 AM] System Started
+[10:05 AM] CPU Stable
+[10:10 AM] No Errors Detected
+[10:20 AM] RAM Usage Increased
+[10:30 AM] System Running Smoothly
+                    </textarea>
+                </section>
+
+            </td>
+
+            <!-- RIGHT SIDE (ASIDE PANEL) -->
+            <td width="30%" valign="top">
+
+                <h3>📌 Quick Info</h3>
+                <ul>
+                    <li>✔ System Status: Normal</li>
+                    <li>✔ No Critical Alerts</li>
+                    <li>✔ Network Stable</li>
+                </ul>
+
+                <hr>
+
+                <h3>⚠ Alerts</h3>
+                <p>No warnings detected.</p>
+
+                <hr>
+
+                <h3>📅 System Info</h3>
+                <p>Date: 2026</p>
+                <p>Server: Active</p>
+
+            </td>
+        </tr>
+
+    </table>
+
+    <!-- ===== FOOTER ===== -->
+    <footer align="center">
+        <hr>
+        <p>&copy; 2026 System Monitoring Dashboard | Designed by Student</p>
+    </footer>
+
+</body>
+
+</html>
