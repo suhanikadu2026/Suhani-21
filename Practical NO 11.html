@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML5 APIs Demo</title>
+
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+}
+
+section {
+    margin: 30px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+canvas {
+    border: 1px solid black;
+}
+
+#dragBox {
+    width: 100px;
+    height: 100px;
+    background: orange;
+    cursor: grab;
+}
+
+#dropArea {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed gray;
+    margin: auto;
+}
+</style>
+</head>
+
+<body>
+
+<h1>HTML5 APIs Demonstration</h1>
+
+<!-- Geolocation API -->
+<section>
+<h2>Geolocation API</h2>
+<button onclick="getLocation()">Get Location</button>
+<p id="location"></p>
+</section>
+
+<!-- Web Storage API -->
+<section>
+<h2>Web Storage API</h2>
+<input type="text" id="name" placeholder="Enter your name">
+<button onclick="saveData()">Save</button>
+<button onclick="loadData()">Load</button>
+<p id="result"></p>
+</section>
+
+<!-- Canvas API -->
+<section>
+<h2>Canvas API</h2>
+<canvas id="myCanvas" width="300" height="150"></canvas>
+<br>
+<button onclick="draw()">Draw</button>
+</section>
+
+<!-- Drag and Drop API -->
+<section>
+<h2>Drag and Drop API</h2>
+
+<div id="dragBox" draggable="true" ondragstart="drag(event)">
+    Drag me
+</div>
+
+<br>
+
+<div id="dropArea" ondrop="drop(event)" ondragover="allowDrop(event)">
+    Drop here
+</div>
+
+</section>
+
+<script>
+// Geolocation
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            document.getElementById("location").innerHTML =
+                "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+        });
+    } else {
+        document.getElementById("location").innerHTML = "Geolocation not supported";
+    }
+}
+
+// Web Storage
+function saveData() {
+    let name = document.getElementById("name").value;
+    localStorage.setItem("username", name);
+    alert("Data Saved!");
+}
+
+function loadData() {
+    let data = localStorage.getItem("username");
+    document.getElementById("result").innerHTML = "Stored Name: " + data;
+}
+
+// Canvas
+function draw() {
+    let c = document.getElementById("myCanvas");
+    let ctx = c.getContext("2d");
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(20, 20, 150, 100);
+
+    ctx.strokeStyle = "red";
+    ctx.strokeRect(20, 20, 150, 100);
+}
+
+// Drag & Drop
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    let data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+
+</body>
+</html>
